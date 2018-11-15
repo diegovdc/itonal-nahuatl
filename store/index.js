@@ -5,7 +5,7 @@ import log from 'tap-logger'
 
 const baseUrl = process.env.NODE_ENV === 'development' ?
   'http://localhost:3000' :
-  'https://diegovdc.github.io/maurilio-sanchez'
+  'https://diegovdc.github.io/itonal-nahuatl'
 
 const get = path => axios.get(baseUrl + path).then(R.pathOr([], ['data']))
 
