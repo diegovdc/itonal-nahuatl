@@ -12,7 +12,7 @@ const poemasRoutes = () =>
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES' ? {
     router: {
-      base: '/maurilio-sanchez/'
+      base: '/itonal-nahuatl/'
     }
   } : {}
 
@@ -20,7 +20,7 @@ const baseURL = log(
     'DEPLOY_ENV == GH_PAGES',
     process.env.DEPLOY_ENV === 'GH_PAGES'
   ) ?
-  'https://diegovdc.github.io/maurilio-sanchez/' :
+  'https://diegovdc.github.io/itonal-nahuatl/' :
   'http://localhost:3000'
 
 module.exports = {
