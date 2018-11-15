@@ -1,5 +1,13 @@
 const pkg = require('./package')
 const log = require('tap-logger')
+const R = require('ramda')
+
+const poemasRoutes = () =>
+  R.pipe(
+    R.map(R.path(['attributes', 'slug'])),
+    R.uniq,
+    R.map(p => `/poemas/${p}`)
+  )(require(`./static/poemas.json`))
 
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
@@ -26,7 +34,7 @@ module.exports = {
   ...routerBase,
   ...env,
   generate: {
-    routes: ['/poemas/hola']
+    routes: [...poemasRoutes()] /*? */
   },
 
   /*
@@ -72,7 +80,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['./plugins/api'],
 
   /*
    ** Nuxt.js modules

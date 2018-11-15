@@ -8,6 +8,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "build:gh": "DEPLOY_ENV=GH_PAGES nuxt build",
+    "build:content": "node node_modules/frontmatter-markdown-to-json --out=static",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "generate:gh": "DEPLOY_ENV=GH_PAGES nuxt generate",
@@ -19,6 +20,7 @@
     "@nuxtjs/axios": "^5.0.0",
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
+    "ramda": "0.25.0",
     "tap-logger": "1.2.0"
   },
   "devDependencies": {
@@ -28,6 +30,7 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-vue": "^4.0.0",
+    "frontmatter-markdown-to-json": "0.0.7",
     "nodemon": "^1.11.0",
     "prettier": "1.14.3",
     "push-dir": "0.4.1"

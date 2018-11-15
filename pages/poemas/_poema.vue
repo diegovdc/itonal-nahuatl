@@ -1,29 +1,7 @@
-<template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        Hola
-      </h1>
-      <h2 class="subtitle">
-        Poesía Nahuatl
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
-</template>
-
 <script>
 import Logo from '~/components/Logo.vue'
+import log from 'tap-logger'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   head() {
@@ -41,9 +19,56 @@ export default {
 
   components: {
     Logo
-  }
+  },
+  computed: {
+    ...mapState(['poemas', 'lang']),
+    poema() {
+      console.log('poemas', this.poemas)
+
+      return log(this.poemas[this.$route.params.poema])
+    //   return this.getPoemas()
+    //     .then(log)
+    }
+  },
+  mounted() {
+    this.getPoemas()
+    this.$router
+    console.log("this.$router ", this.$route.params.poema);
+  },
+
+  methods: {
+    ...mapActions(['getPoemas'])
+  },
+
 }
 </script>
+
+
+<template>
+  <section class="container">
+    <div>
+      <logo/>
+      <h1 class="title">
+        Hola
+      </h1>
+      <h2 class="subtitle">
+        Poesía Nahuatl
+        {{ poema }}
+      </h2>
+      <div class="links">
+        <a
+          href="https://nuxtjs.org/"
+          target="_blank"
+          class="button--green">Documentation</a>
+        <a
+          href="https://github.com/nuxt/nuxt.js"
+          target="_blank"
+          class="button--grey">GitHub</a>
+      </div>
+    </div>
+  </section>
+</template>
+
 
 <style>
 .container {
