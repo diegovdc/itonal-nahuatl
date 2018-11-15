@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const log = require('tap-logger')
 
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
@@ -8,12 +9,15 @@ const routerBase =
         }
       }
     : {}
+const baseURL = log(
+  'DEPLOY_ENV == GH_PAGES',
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+)
+  ? 'https://diegovdc.github.io/maurilio-sanchez/'
+  : 'http://localhost:3000'
 const env = {
   env: {
-    baseURL:
-      process.env.DEPLOY_ENV === 'GH_PAGES'
-        ? 'https://diegovdc.github.io/maurilio-sanchez/'
-        : 'http://localhost:3000'
+    baseURL
   }
 }
 
@@ -82,6 +86,7 @@ module.exports = {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL
   },
 
   /*
