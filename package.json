@@ -25,14 +25,20 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "coffee-loader": "0.9.0",
+    "coffeescript": "2.3.2",
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^3.1.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-vue": "^4.0.0",
     "frontmatter-markdown-to-json": "0.0.7",
+    "node-sass": "4.10.0",
     "nodemon": "^1.11.0",
     "prettier": "1.14.3",
-    "push-dir": "0.4.1"
+    "pug": "2.0.3",
+    "pug-plain-loader": "1.0.0",
+    "push-dir": "0.4.1",
+    "sass-loader": "7.1.0"
   }
 }

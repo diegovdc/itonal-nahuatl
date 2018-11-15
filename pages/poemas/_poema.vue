@@ -2,7 +2,7 @@
 import Logo from '~/components/Logo.vue'
 import log from 'tap-logger'
 import { mapState, mapActions } from 'vuex'
-
+import * as R from 'ramda'
 export default {
   head() {
     return {
@@ -23,81 +23,34 @@ export default {
   computed: {
     ...mapState(['poemas', 'lang']),
     poema() {
-      console.log('poemas', this.poemas)
-
-      return log(this.poemas[this.$route.params.poema])
-    //   return this.getPoemas()
-    //     .then(log)
+      let poema = this.$route.params.poema
+      return R.pipe(
+        R.pathOr({}, [poema, this.lang, 0]),
+        log
+      )(this.poemas)
     }
   },
   mounted() {
+    console.log('poema')
+
     this.getPoemas()
     this.$router
-    console.log("this.$router ", this.$route.params.poema);
+    console.log('this.$router ', this.$route.params.poema)
   },
 
   methods: {
     ...mapActions(['getPoemas'])
-  },
-
+  }
 }
 </script>
 
 
-<template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        Hola
-      </h1>
-      <h2 class="subtitle">
-        Poesía Nahuatl
-        {{ poema }}
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+<template lang="pug">
+div
+  h1 {{ titulo(poema) }}
+  div.body(v-html='poema.body')
 </template>
 
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>

@@ -1,37 +1,18 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
       <h1 class="title">
         poemas de don maurilio sanchez
       </h1>
       <h2 class="subtitle">
         Poesía Nahuatl
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
     </div>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-// import axios from 'axios'
-
-// axios.get(env.baseUrl+'/hola.json').then(console.log)
 export default {
-  components: {
-    Logo
-  },
-
   mounted() {
     this.$axios.get('/hola.json').then(console.log)
     console.log('holis')

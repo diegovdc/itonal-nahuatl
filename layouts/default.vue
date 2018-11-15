@@ -1,7 +1,28 @@
-<template>
-  <div>
-    <nuxt/>
-  </div>
+<script>
+import { mapActions, mapState } from 'vuex'
+import Menu from '~/components/menu.vue'
+import EventHub from '~/EventHub'
+
+export default {
+  components: {
+    Menu
+  },
+  mounted() {
+    this.getPoemas()
+  },
+  methods: {
+    ...mapActions(['getPoemas', 'idiomas']),
+    bodyHover() {
+      EventHub.$emit('body-hover')
+    }
+  }
+}
+</script>
+
+<template lang='pug'>
+  div(@mouseover='bodyHover')
+    Menu
+    nuxt
 </template>
 
 <style>
