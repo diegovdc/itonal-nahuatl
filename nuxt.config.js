@@ -11,7 +11,7 @@ const routerBase =
 const env = {
   env: {
     baseURL:
-      process.env.NODE_ENV === 'production'
+      process.env.DEPLOY_ENV === 'GH_PAGES'
         ? 'https://diegovdc.github.io/maurilio-sanchez/'
         : 'http://localhost:3000'
   }
