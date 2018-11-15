@@ -6,7 +6,7 @@
         poemas de don maurilio sanchez
       </h1>
       <h2 class="subtitle">
-        Poesía Nahuatl
+        Poesía en Nahuatl
       </h2>
       <div class="links">
         <a
@@ -34,6 +34,7 @@ export default {
 
   mounted() {
     this.$axios.get('/hola.json').then(console.log)
+    console.log('holis')
   }
 }
 </script>
