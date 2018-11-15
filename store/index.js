@@ -2,7 +2,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import * as R from 'ramda'
 
-console.log(process.env)
+console.log('env', process.env)
 const apiPoemas = () => {
   return axios.get('/poemas.json')
     .then(R.pipe(

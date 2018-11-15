@@ -5,7 +5,7 @@
   "author": "Diego Villaseñor",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "NODE_ENV=development nuxt",
     "build": "nuxt build",
     "build:gh": "DEPLOY_ENV=GH_PAGES nuxt build",
     "build:content": "node node_modules/frontmatter-markdown-to-json --out=static",
