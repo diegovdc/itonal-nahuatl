@@ -6,7 +6,7 @@
         poemas de don maurilio sanchez
       </h1>
       <h2 class="subtitle">
-        Poesía Nahuatl
+        Poesía en Nahuatl
       </h2>
       <div class="links">
         <a
