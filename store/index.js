@@ -2,6 +2,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import * as R from 'ramda'
 
+console.log(process.env)
 const apiPoemas = () => {
   return axios.get('/poemas.json')
     .then(R.pipe(
@@ -19,7 +20,9 @@ const createStore = () => {
       lang: 'es'
     }),
     actions: {
-      getPoemas({ commit }, poemas) {
+      getPoemas({
+        commit
+      }, poemas) {
         apiPoemas()
           .then(poemas =>
             commit('setPoemas', poemas)

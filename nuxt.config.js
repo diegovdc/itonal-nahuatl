@@ -10,29 +10,25 @@ const poemasRoutes = () =>
   )(require(`./static/poemas.json`))
 
 const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? {
-        router: {
-          base: '/maurilio-sanchez/'
-        }
-      }
-    : {}
+  process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+    router: {
+      base: '/maurilio-sanchez/'
+    }
+  } : {}
+
 const baseURL = log(
-  'DEPLOY_ENV == GH_PAGES',
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-)
-  ? 'https://diegovdc.github.io/maurilio-sanchez/'
-  : 'http://localhost:3000'
-const env = {
-  env: {
-    baseURL
-  }
-}
+    'DEPLOY_ENV == GH_PAGES',
+    process.env.DEPLOY_ENV === 'GH_PAGES'
+  ) ?
+  'https://diegovdc.github.io/maurilio-sanchez/' :
+  'http://localhost:3000'
 
 module.exports = {
   mode: 'universal',
   ...routerBase,
-  ...env,
+  env: {
+    baseURL
+  },
   generate: {
     routes: [...poemasRoutes()] /*? */
   },
@@ -42,8 +38,7 @@ module.exports = {
    */
   head: {
     title: pkg.name,
-    meta: [
-      {
+    meta: [{
         charset: 'utf-8'
       },
       {
@@ -56,13 +51,11 @@ module.exports = {
         content: pkg.description
       }
     ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
-      }
-    ]
+    link: [{
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    }]
   },
 
   /*
