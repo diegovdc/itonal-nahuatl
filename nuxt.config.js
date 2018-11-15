@@ -27,7 +27,8 @@ module.exports = {
   mode: 'universal',
   ...routerBase,
   env: {
-    baseURL_: baseUrl
+    hola: 'mundo',
+    baseURL
   },
   generate: {
     routes: [...poemasRoutes()] /*? */

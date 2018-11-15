@@ -2,12 +2,10 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import * as R from 'ramda'
 
-console.log('env', process.env.NODE_ENV)
 const baseUrl = process.env.NODE_ENV === 'development' ?
   'http://localhost:3000' :
   'https://diegovdc.github.io/maurilio-sanchez'
 
-console.log("baseUrl ", baseUrl);
 const get = path => axios.get(baseUrl + path)
 
 const apiPoemas = () => {
