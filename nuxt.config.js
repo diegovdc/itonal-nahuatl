@@ -4,7 +4,7 @@ const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? {
         router: {
-          base: '/<repository-name>/'
+          base: '/maurilio-sanchez/'
         }
       }
     : {}
@@ -12,7 +12,7 @@ const env = {
   env: {
     baseURL:
       process.env.NODE_ENV === 'production'
-        ? 'http//your-url'
+        ? 'https://diegovdc.github.io/maurilio-sanchez/'
         : 'http://localhost:3000'
   }
 }
@@ -20,6 +20,7 @@ const env = {
 module.exports = {
   mode: 'universal',
   ...routerBase,
+  ...env,
   generate: {
     routes: ['/poemas/hola']
   },

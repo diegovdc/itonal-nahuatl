@@ -24,10 +24,16 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+// import axios from 'axios'
 
+// axios.get(env.baseUrl+'/hola.json').then(console.log)
 export default {
   components: {
     Logo
+  },
+
+  mounted() {
+    this.$axios.get('/hola.json').then(console.log)
   }
 }
 </script>
