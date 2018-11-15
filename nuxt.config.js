@@ -1,7 +1,25 @@
 const pkg = require('./package')
 
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/<repository-name>/'
+        }
+      }
+    : {}
+const env = {
+  env: {
+    baseURL:
+      process.env.NODE_ENV === 'production'
+        ? 'http//your-url'
+        : 'http://localhost:3000'
+  }
+}
+
 module.exports = {
   mode: 'universal',
+  ...routerBase,
   generate: {
     routes: ['/poemas/hola']
   },
