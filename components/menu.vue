@@ -1,6 +1,7 @@
 <script>
 import EventHub from '~/EventHub'
-import {storeOnLocal} from '~/session-storage'
+import { storeOnLocal } from '~/session-storage'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   data() {
@@ -11,6 +12,18 @@ export default {
         // tzo: 'Tzotzil',
         es: 'Español'
         // en: 'English'
+      }
+    }
+  },
+
+  computed: {
+    ...mapGetters(['shownPoemas'])
+  },
+
+  watch: {
+    shownPoemas() {
+      if (this.$route.fullPath === '/#poemas' && process.browser) {
+        this.goToPoemas()
       }
     }
   },
@@ -34,6 +47,19 @@ export default {
       this.$store.commit('cambiarIdioma', idioma_key)
       storeOnLocal('idioma', idioma_key)
       this.closeSubmenu()
+    },
+
+    goToPoemas() {
+      if (this.$route.path !== '/') {
+        this.$router.push({ path: '/', hash: '#poemas' })
+        return
+      }
+      this.$nextTick(() => {
+        const poemas = document.querySelector('#poemas')
+        if (poemas) {
+          poemas.scrollIntoView()
+        }
+      })
     }
   }
 }
@@ -54,7 +80,7 @@ div#menu.menu
             @click='seleccionarIdioma(key)'
             ) {{ idioma }}
     p.link
-      nuxt-link(to='/#poemas') Poemas
+      span(@click='goToPoemas') Poemas
     p.link
       nuxt-link(to='/acerca') Acerca
 
