@@ -50,6 +50,7 @@ export default {
     },
 
     goToPoemas() {
+      console.log('this.$route.path ', this.$route.path)
       if (this.$route.path !== '/') {
         this.$router.push({ path: '/', hash: '#poemas' })
         return
