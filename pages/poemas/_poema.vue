@@ -5,11 +5,12 @@ import { mapState, mapActions } from 'vuex'
 import * as R from 'ramda'
 export default {
   head() {
+    let lang = R.pathOr('es', ['$route', 'query', 'l'], this)
     let poema = R.pathOr(
       {},
       [
         this.$route.params.poema,
-        this.lang,
+        lang,
         0,
       ],
       this.poemas
