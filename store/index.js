@@ -28,9 +28,11 @@ const createStore = () => {
     }),
     actions: {
       getPoemas({
-        commit
+        commit,
+        state
       }, poemas) {
-        apiPoemas()
+        if(!R.isEmpty(state.poemas)) {return Promise.resolve(state.poemas)}
+        return apiPoemas()
           .then(poemas =>
             commit('setPoemas', poemas)
           )

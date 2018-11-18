@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template lang='pug'>
-  div(@mouseover='bodyHover')
+  div.main(@mouseover='bodyHover')
     Menu
     nuxt
 </template>
@@ -34,3 +34,8 @@ export default {
 @import '../assets/mazorca.scss';
 </style>
 
+<style lang="scss">
+.main {
+  padding-top: 60px;
+}
+</style>

@@ -51,8 +51,11 @@ export default {
     },
 
     goToPoemas() {
-      console.log('this.$route.path ', this.$route.path)
+      console.log('this.$route.path goToPoemas', this.$route.path)
       if (this.$route.path !== '/') {
+        console.log('not home')
+
+        const poemas = document.querySelector('#poemas')
         this.$router.push({ path: '/', hash: '#poemas' })
         return
       }
@@ -91,11 +94,17 @@ div#menu.menu
 
 <style lang="scss" scoped>
 .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 20px 16px;
   max-width: 1220px;
   margin: 0 auto;
+  z-index: 999;
+  background-color: #fff;
 }
 
 .submenu {
