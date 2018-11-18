@@ -22,7 +22,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Poema del libro Itonal Nahuatl de Maurilo Sánchez '
+          content: lang+ 'Poema del libro "Itonal Nahuatl" de Maurilo Sánchez '
         },
         {
           hid: 'og:image',
