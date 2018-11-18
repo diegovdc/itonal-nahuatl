@@ -22,7 +22,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: lang+ 'Poema del libro "Itonal Nahuatl" de Maurilo Sánchez '
+          content: JSON.stringify(this.$route.query)
         },
         {
           hid: 'og:image',
