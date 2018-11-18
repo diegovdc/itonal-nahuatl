@@ -46,6 +46,7 @@ export default {
     seleccionarIdioma(idioma_key) {
       this.$store.commit('cambiarIdioma', idioma_key)
       storeOnLocal('idioma', idioma_key)
+      this.$router.push({ query: {l: idioma_key} })
       this.closeSubmenu()
     },
 

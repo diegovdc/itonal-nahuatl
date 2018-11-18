@@ -24,7 +24,7 @@ const createStore = () => {
     state: () => ({
       poemas: processPoemas(poemas),
       // poemas: [],
-      lang: 'es'
+      lang: ''
     }),
     actions: {
       getPoemas({

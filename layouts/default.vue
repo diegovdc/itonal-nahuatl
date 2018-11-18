@@ -3,6 +3,7 @@ import { mapActions, mapState } from 'vuex'
 import Menu from '~/components/menu.vue'
 import EventHub from '~/EventHub'
 import { getOnLocal } from '~/session-storage'
+import * as R from 'ramda'
 
 export default {
   components: {
@@ -10,7 +11,7 @@ export default {
   },
   mounted() {
     this.getPoemas()
-    let idioma = getOnLocal('idioma') || 'es'
+    let idioma = R.path(['$route', 'query', 'l'], this) || getOnLocal('idioma') || 'es'
     this.$store.commit('cambiarIdioma', idioma)
   },
   methods: {
