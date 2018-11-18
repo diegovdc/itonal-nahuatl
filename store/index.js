@@ -2,10 +2,9 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import * as R from 'ramda'
 import log from 'tap-logger'
-
-const baseUrl = process.env.NODE_ENV === 'development' ?
-  'http://localhost:3000' :
-  'https://diegovdc.github.io/itonal-nahuatl'
+import {
+  baseUrl
+} from '~/base-url'
 
 const get = path => axios.get(baseUrl + path).then(R.pathOr([], ['data']))
 

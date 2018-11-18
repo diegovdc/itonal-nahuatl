@@ -1,7 +1,9 @@
 const pkg = require('./package')
 const log = require('tap-logger')
 const R = require('ramda')
-
+const {
+  baseUrl
+} = require('./base-url')
 const poemasRoutes = () =>
   R.pipe(
     R.map(R.path(['attributes', 'slug'])),
@@ -16,18 +18,12 @@ const routerBase =
     }
   } : {}
 
-const baseURL = log(
-    'DEPLOY_ENV == GH_PAGES',
-    process.env.DEPLOY_ENV === 'GH_PAGES'
-  ) ?
-  'https://diegovdc.github.io/itonal-nahuatl/' :
-  'http://localhost:3000'
+const baseURL = baseUrl
 
 module.exports = {
   mode: 'universal',
   ...routerBase,
   env: {
-    hola: 'mundo',
     baseURL
   },
   generate: {
@@ -74,7 +70,9 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['./plugins/functions'],
+  plugins: [
+    './plugins/functions'
+  ],
 
   /*
    ** Nuxt.js modules

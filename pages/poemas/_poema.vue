@@ -59,9 +59,9 @@ div.poema-main
   .poema-main-container
     .col.container.poema
       .body(v-html='poema.body')
-      audio.audio(v-if='audio_' :src='"/audios/"+audio_' controls)
+      audio.audio(v-if='audio_' :src='baseUrl+"/audios/"+audio_' controls)
     .col.img
-      img(v-if='imagen_' :src='"/images/"+imagen_')
+      img(v-if='imagen_' :src='baseUrl+"/images/"+imagen_')
 </template>
 
 

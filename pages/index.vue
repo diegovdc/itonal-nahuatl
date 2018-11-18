@@ -16,7 +16,7 @@ export default {
 section.container
   div
     h1.title Itonal Nahuatl
-    img.main-img(src='/images/home.jpg')
+    img.main-img(:src='baseUrl+"/images/home.jpg"')
     h2.subtitle poesías de Don Maurilio Sánchez
 
     div#poemas.poemas(v-for='poema in shownPoemas')
