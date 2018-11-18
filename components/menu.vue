@@ -8,7 +8,7 @@ export default {
     return {
       submenuIsOpen: false,
       idiomas: {
-        nah: 'Nahuatl',
+        nah: 'Náhuatl',
         // tzo: 'Tzotzil',
         es: 'Español'
         // en: 'English'
