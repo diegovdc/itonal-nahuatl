@@ -1,0 +1,15 @@
+{
+  "name": "mazorca",
+  "version": "1.0.0",
+  "description": "**This directory is not required, you can delete it if you don't want to use it.**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mazorca": "mazorca"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mazorca-core": "1.6.2"
+  }
+}

@@ -1,0 +1,159 @@
+@import './node_modules/mazorca-core/core/functions/_functions.scss';
+@import './mazorca/config/_widths.scss';
+@import './mazorca/config/_breaks.scss';
+@import './node_modules/mazorca-core/core/mixins/preconfig-mixins/_preconfig-mixins.scss';
+@import './node_modules/mazorca-core/core/mixins/_mixins.scss';
+@mixin underHeight($break) {
+  @media only screen and (max-height: $break) {
+    @content;
+  }
+}
+
+@mixin underWidthAndHeight($width, $height) {
+  @media screen and (max-width: $width) and (max-height: $height) {
+    @content;
+  }
+}
+
+@mixin overWidthAndHeight($width, $height) {
+  @media screen and (min-width: $width) and (min-height: $height) {
+    @content;
+  }
+}
+
+
+@mixin placeholder($placeholdercolor){
+	&::-webkit-input-placeholder {
+		color: $placeholdercolor;
+		@content;
+	}
+	&:-moz-placeholder {
+		color: $placeholdercolor;
+		@content;
+	}/// Firefox 18-
+	&::-moz-placeholder {
+		color: $placeholdercolor;
+		@content;
+	}///Firefox 19+
+	&:-ms-input-placeholder {
+		color: $placeholdercolor;
+		@content;
+	}
+}
+
+
+@mixin button-styles {
+
+}
+
+@mixin text-styles {
+
+}
+
+@mixin graph-ttl {
+  font-weight: bold;
+  font-size: 16px;
+  color: $text-grey;
+}
+
+@mixin col {
+
+}
+
+@mixin selected-color($color) {
+  &::selection {
+    background-color: $color;
+  }
+}
+
+@mixin card-styles {
+  background-color: $white;
+  box-shadow: 2px 2px 2px 2px $border-grey;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+@mixin graph-info-colors {
+  // .graph-info {//example class
+    display: flex;
+    align-items: center;
+    &__container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin: 0 auto;
+    }
+    &__text {
+      font-size: 16px;
+      color: $text-grey;
+      padding-left: 5px;
+    }
+    &__color {
+      width: 20px;
+      height: 20px;
+      &.dark {
+        background-color: $dark-blue;
+      }
+      &.slate {
+        background-color: $slate-blue;
+      }
+      &.middle {
+        background-color: $hp-blue;
+      }
+      &.light {
+        background-color: $hp-blue-light;
+      }
+
+      &.yellow {
+        background-color: $yellow;
+      }
+    }
+  // }
+}
+
+@mixin button-switch {
+  $w: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  width: ($w/2);
+  height: 100%;
+  color: $white;
+  cursor: pointer;
+  &.selected {
+    background-color: $white;
+    color: $very-dark-blue;
+    border-radius: 5px;
+  }
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $w;
+    background-color: $very-dark-blue;
+    height: 30px;
+    padding: 3px;
+    border-radius: 5px;
+  }
+}
+
+
+@mixin pagination {
+  .pagination {
+    font-size: 12px;
+    margin-bottom: 5px;
+    padding: 0 4px;
+    white-space: nowrap;
+    &-text {
+      @include selected-color(transparent);
+      min-width: 100px;
+    }
+    &-arrow {
+      padding: 3px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+}

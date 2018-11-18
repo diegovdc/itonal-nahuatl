@@ -1,17 +1,11 @@
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapState, mapGetters } from 'vuex'
 import * as R from 'ramda'
 import log from 'tap-logger'
 export default {
   computed: {
     ...mapState(['poemas', 'lang']),
-    shownPoemas() {
-      console.log('this.poemas ', this.poemas)
-      return R.pipe(
-        R.map(R.path([this.lang, 0])),
-        log
-      )(this.poemas)
-    }
+    ...mapGetters(['shownPoemas']),
   },
   mounted() {
     console.log(this.$router)

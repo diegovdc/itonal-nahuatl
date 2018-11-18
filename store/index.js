@@ -33,8 +33,17 @@ const createStore = () => {
             commit('setPoemas', poemas)
           )
       },
-
-
+    },
+    getters: {
+      shownPoemas: state => {
+        let orden = R.pathOr(Infinity, ['attributes', 'orden'])
+        return R.pipe(
+          R.map(R.path([state.lang, 0])),
+          R.values,
+          R.sort((a, b) => orden(a) - orden(b)),
+          log
+        )(state.poemas)
+      }
     },
     mutations: {
       setPoemas(state, poemas) {

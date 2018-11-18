@@ -1,0 +1,58 @@
+@charset "UTF-8";
+//===Mazorca Core===//
+@import './node_modules/mazorca-core/_mazorca-core.scss';
+
+//===Configs===//
+@import './mazorca/config/_config';
+@import './colors';
+//===Vendor===//Css begins compling here
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+// @import "vendor/bootstrap/_bootstrap.scss";
+
+//===Mazorca===//
+@import './mazorca/_elements';
+@import './mazorca/_grid'; //
+@import './mazorca/_components';
+@import './mazorca/_theme-helpers';
+@import './mazorca/_modules';
+
+
+html {
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.link {
+  transition: color 0.3s ease;
+
+  &:hover,
+  .nuxt-link-exact-active {
+    color: $link-hover !important;
+    text-decoration: underline;
+  }
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: $main;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
