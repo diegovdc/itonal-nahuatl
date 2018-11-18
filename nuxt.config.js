@@ -34,7 +34,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: 'Itonal Nahuatl',
     meta: [{
         charset: 'utf-8'
       },
@@ -45,7 +45,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: pkg.description
+        content: 'poemas de Don Maurilio Sánchez'
       }
     ],
     link: [{

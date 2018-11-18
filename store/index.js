@@ -5,22 +5,25 @@ import log from 'tap-logger'
 import {
   baseUrl
 } from '~/base-url'
+import poemas from '../static/poemas.json'
 
 const get = path => axios.get(baseUrl + path).then(R.pathOr([], ['data']))
 
+const processPoemas = R.pipe(
+  R.groupBy(R.path(['attributes', 'slug'])),
+  R.map(R.groupBy(R.path(['attributes', 'idioma'])))
+)
 const apiPoemas = () => {
   return get('/poemas.json')
-    .then(R.pipe(
-      R.groupBy(R.path(['attributes', 'slug'])),
-      R.map(R.groupBy(R.path(['attributes', 'idioma'])))
-    ))
+    .then(processPoemas)
     .catch(() => console.error('Hubo un error al traer los poemas'))
 }
 
 const createStore = () => {
   return new Vuex.Store({
     state: () => ({
-      poemas: [],
+      poemas: processPoemas(poemas),
+      // poemas: [],
       lang: 'es'
     }),
     actions: {

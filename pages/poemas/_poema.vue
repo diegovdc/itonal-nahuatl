@@ -5,14 +5,39 @@ import { mapState, mapActions } from 'vuex'
 import * as R from 'ramda'
 export default {
   head() {
+    let poema = R.pathOr(
+      {},
+      [
+        this.$route.params.poema,
+        this.lang,
+        0,
+      ],
+      this.poemas
+    )
+    let getMeta = meta => R.pathOr('', ['attributes', meta], poema)
     return {
-      title: 'About Us - Nuxt.js',
+      title: this.titulo(poema),
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'About our company Nuxt.js '
-        }
+          content: 'Poema del libro Itonal Nahuatl de Maurilo Sánchez '
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: `${this.baseUrl}/images/${getMeta('imagen')}`
+        },
+        {
+          hid: 'og:image:width',
+          name: 'og:image:width',
+          content: getMeta('imagen_ancho')
+        },
+        {
+          hid: 'og:image:height',
+          name: 'og:image:height',
+          content: getMeta('imagen_alto')
+        },
       ]
     }
   },

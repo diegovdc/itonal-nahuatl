@@ -5,6 +5,8 @@ slug: ihcuac-tlalixpan-tlaneci
 orden: 1
 audio: agua-marina.mp3
 imagen: 1.jpg
+imagen_ancho: 3245
+imagen_alto: 2550
 ---
 
 Cuando sobre la tierra amanece<br>
