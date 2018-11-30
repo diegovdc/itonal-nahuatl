@@ -1,6 +1,6 @@
 ---
 titulo: Atlalticpac (Agua Marina)
-idioma: nah
+idioma: es
 slug: atlalticpac
 orden: 5
 audio: atlalticpac.mp3

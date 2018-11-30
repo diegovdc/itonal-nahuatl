@@ -1,6 +1,6 @@
 ---
 titulo: Mi Pueblo
-idioma: nah
+idioma: es
 slug: mi-pueblo
 orden: 2
 audio: agua-marina.mp3

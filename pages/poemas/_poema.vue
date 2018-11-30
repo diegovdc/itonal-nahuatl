@@ -1,20 +1,12 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import log from 'tap-logger'
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 import * as R from 'ramda'
 export default {
   head() {
     let lang = R.pathOr('es', ['$route', 'query', 'l'], this)
-    let poema = R.pathOr(
-      {},
-      [
-        this.$route.params.poema,
-        lang,
-        0,
-      ],
-      this.poemas
-    )
+    let poema = R.pathOr({}, [this.$route.params.poema, lang, 0], this.poemas)
     let getMeta = meta => R.pathOr('', ['attributes', meta], poema)
     return {
       title: this.titulo(poema),
@@ -38,7 +30,7 @@ export default {
           hid: 'og:image:height',
           name: 'og:image:height',
           content: getMeta('imagen_alto')
-        },
+        }
       ]
     }
   },
@@ -48,12 +40,10 @@ export default {
   },
   computed: {
     ...mapState(['poemas', 'lang']),
+    ...mapGetters(['shownPoemas']),
     poema() {
       let poema = this.$route.params.poema
-      return R.pipe(
-        R.pathOr({}, [poema, this.lang, 0]),
-        log
-      )(this.poemas)
+      return R.pipe(R.pathOr({}, [poema, this.lang, 0]))(this.poemas)
     },
 
     audio_() {
@@ -62,14 +52,25 @@ export default {
 
     imagen_() {
       return this.imagen(this.poema)
+    },
+
+    nextPoema() {
+      let currentPoema = R.pathOr(Infinity, ['attributes', 'orden'], this.poema)
+      return R.pipe(
+        R.find(p => R.path(['attributes', 'orden'], p) === currentPoema + 1)
+      )(this.shownPoemas)
+    },
+
+    prevPoema() {
+      let currentPoema = R.pathOr(Infinity, ['attributes', 'orden'], this.poema)
+      return R.pipe(
+        R.find(p => R.path(['attributes', 'orden'], p) === currentPoema - 1)
+      )(this.shownPoemas)
     }
   },
   mounted() {
-    console.log('poema')
-
     this.getPoemas()
     this.$router
-    console.log('this.$router ', this.$route.params.poema)
   },
 
   methods: {
@@ -80,27 +81,39 @@ export default {
 
 
 <template lang="pug">
+mixin nav
+  .nav
+    .nav__link-container
+      nuxt-link(v-if="prevPoema" :to="'/poemas/'+slug(prevPoema)") {{getTrans('<<', ['poems', 'prev'])}} {{titulo(prevPoema)}}
+    .nav__link-container
+      nuxt-link(v-if="nextPoema" :to="'/poemas/'+slug(nextPoema)") {{titulo(nextPoema)}} {{getTrans('>>', ['poems', 'next'])}}
 div.poema-main
-  h1.subtitle {{ titulo(poema) }}
+  h1.title {{ titulo(poema) }}
+  +nav
+  audio.audio(v-if='audio_' :src='baseUrl+"/audios/"+audio_' controls)
   .poema-main-container
     .col.container.poema
       .body(v-html='poema.body')
-      audio.audio(v-if='audio_' :src='baseUrl+"/audios/"+audio_' controls)
     .col.img
       img(v-if='imagen_' :src='baseUrl+"/images/"+imagen_')
+  +nav
 </template>
 
 
 <style lang='scss' scoped>
 @import '../../assets/mixins.scss';
+@import '../../assets/colors.scss';
 
 .poema-main {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
 }
-.subtitle {
-  margin-bottom: 40px;
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .poema-main-container {
@@ -146,6 +159,25 @@ div.poema-main
   p {
     margin-bottom: 20px;
     line-height: 1.3;
+  }
+}
+
+.nav {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  padding-bottom: 30px;
+  justify-content: space-around;
+
+  &__link {
+    &-container {
+      color: darken($link-hover, 15%);
+      &:hover {
+        color: $link-hover;
+        text-decoration: underline;
+      }
+    }
   }
 }
 </style>

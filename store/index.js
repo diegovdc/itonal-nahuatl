@@ -6,6 +6,7 @@ import {
   baseUrl
 } from '~/base-url'
 import poemas from '../static/poemas.json'
+import trans from '../traducciones'
 
 const get = path => axios.get(baseUrl + path).then(R.pathOr([], ['data']))
 
@@ -24,7 +25,8 @@ const createStore = () => {
     state: () => ({
       poemas: processPoemas(poemas),
       // poemas: [],
-      lang: ''
+      lang: '',
+      trans
     }),
     actions: {
       getPoemas({

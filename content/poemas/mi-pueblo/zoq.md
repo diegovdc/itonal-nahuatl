@@ -1,6 +1,6 @@
 ---
 titulo: Äj nhkupkuy
-idioma: nah
+idioma: zoq
 slug: mi-pueblo
 orden: 2
 audio: agua-marina.mp3

@@ -2,6 +2,7 @@
 import EventHub from '~/EventHub'
 import { storeOnLocal } from '~/session-storage'
 import { mapState, mapGetters } from 'vuex'
+import { pathOr } from 'ramda'
 
 export default {
   data() {
@@ -9,9 +10,11 @@ export default {
       submenuIsOpen: false,
       idiomas: {
         nah: 'Náhuatl',
-        // tzo: 'Tzotzil',
-        es: 'Español'
-        // en: 'English'
+        es: 'Español',
+        zoq: 'Zoque',
+        pt: 'Português',
+        fr: 'Français',
+        en: 'English'
       }
     }
   },
@@ -35,6 +38,7 @@ export default {
   },
 
   methods: {
+    pathOr,
     openSubmenu() {
       this.submenuIsOpen = true
     },
@@ -74,10 +78,10 @@ export default {
 <template lang="pug">
 div#menu.menu
   p
-    nuxt-link(to='/' v-if='$route.path !== "/"') Itonal Nahuatl
+    nuxt-link(:to='"/?l="+lang' v-if='$route.name !== "index"') Itonal Nahuatl
   div.right-side
     div.submenu(@mouseover.stop='openSubmenu')
-      span Idiomas
+      span {{getTrans('Idiomas', ['menu', 'languages'])}}
       transition(name='submenu')
         div.submenu-container(v-show="submenuIsOpen")
           p.link(
@@ -85,9 +89,9 @@ div#menu.menu
             @click='seleccionarIdioma(key)'
             ) {{ idioma }}
     p.link
-      span(@click='goToPoemas') Poemas
+      span(@click='goToPoemas') {{getTrans('Poemas', ['menu', 'poems'])}}
     p.link
-      nuxt-link(to='/acerca') Acerca
+      nuxt-link(to='/acerca') {{getTrans('Acerca', ['menu', 'about'])}}
 
 </template>
 
@@ -105,11 +109,12 @@ div#menu.menu
   margin: 0 auto;
   z-index: 999;
   background-color: #fff;
+  font-size: 18px;
 }
 
 .submenu {
   position: relative;
-  width: 72px;
+  width: 106px;
   text-align: center;
 
   //transitions
@@ -134,13 +139,15 @@ div#menu.menu
     display: block;
   }
   & .link {
-    padding: 5px;
+    padding: 7px;
   }
   &-container {
     z-index: 1;
     position: absolute;
     padding-top: 24px;
     padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
     width: 100%;
     top: -4px;
     left: 0;

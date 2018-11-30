@@ -1,0 +1,46 @@
+export default {
+  menu: {
+    languages: {
+      nah: 'Tlahtolme',
+      es: 'Idiomas',
+      zoq: 'Idiomas',
+      fr: 'Langues',
+      pt: 'Línguas',
+      en: 'Languages'
+    },
+
+    poems: {
+      nah: 'Xhochitlahtol',
+      es: 'Poemas',
+      zoq: 'Poemas',
+      fr: 'Poèmes',
+      pt: 'Poemas',
+      en: 'Poems'
+    },
+
+    about: {
+      nah: 'Xhcualpachoh',
+      es: 'Acerca',
+      zoq: 'Acerca',
+      fr: 'À propos ',
+      pt: 'Sobre',
+      en: 'About'
+    }
+  },
+  siteTitle: {
+    nah: 'Nahuatl: Axhan, Cemanahuatl ihuan Cahuitl',
+    es: 'Nahuatl: Hoy, Espacio y Tiempo',
+    zoq: 'Nahuatl: Yäti, Ijtkuy y Jama',
+    fr: "Nahuatl: Aujourd'hui, Espace et Temps",
+    pt: 'Nahuatl: Hoje, Espaço e Tempo',
+    en: 'Nahuatl: Today, Space and Time'
+  },
+  siteSubtitle: {
+    nah: '¡Nic nequi ni tlahtos, nic nequi tih nech caquis!',
+    es: '¡Quiero hablar, quiero que me escuches!',
+    zoq: '¡Ne wewenetyo’u, sutpatzi wä’kä ntä nhkämanä!',
+    fr: "Je veux parler, je veux que tu m’écoutes !",
+    pt: 'Quero falar, quero que você me escute!',
+    en: 'I want to talk, I want you to listen to me!'
+  }
+}
