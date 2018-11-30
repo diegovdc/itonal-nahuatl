@@ -54,9 +54,6 @@ section.container
   font-size: 80px;
   color: $main;
   letter-spacing: 1px;
-  position: fixed;
-  top: 60px;
-  left: 0;
   width: 100%;
   background-color: #fff;
 }
@@ -73,21 +70,6 @@ section.container
 
 .main-img {
   margin-bottom: 20px;
-  // width: unset;
-  // max-width: unset;
-  // height: 100%;
-  position: fixed;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  opacity: 0.5;
-  &-container {
-    height: 82vh;
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-  }
 }
 
 .poemas {
