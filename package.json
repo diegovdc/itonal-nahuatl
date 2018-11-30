@@ -35,7 +35,7 @@
     "eslint-plugin-vue": "^4.0.0",
     "frontmatter-markdown-to-json": "0.0.7",
     "node-sass": "4.10.0",
-    "nodemon": "^1.11.0",
+    "nodemon": "1.18.6",
     "prettier": "1.14.3",
     "pug": "2.0.3",
     "pug-plain-loader": "1.0.0",
