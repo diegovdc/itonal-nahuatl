@@ -14,7 +14,8 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Poema del libro "Itonal Náhuatl" de Maurilo Sánchez '
+          content:
+            'Poema del libro "Nahuatl: Axhan, Cemanahuatl ihuan Cahuitl" de Maurilo Sánchez '
         },
         {
           hid: 'og:image',
@@ -52,6 +53,10 @@ export default {
 
     imagen_() {
       return this.imagen(this.poema)
+    },
+
+    notasAlPie() {
+      return R.pathOr({}, ['attributes', 'notas_al_pie'], this.poema)
     },
 
     nextPoema() {
@@ -94,6 +99,10 @@ div.poema-main
   .poema-main-container
     .col.container.poema
       .body(v-html='poema.body')
+      .notas-al-pie
+        p(v-for="(nota, key) in notasAlPie")
+          sup {{key}}
+          span(v-html="nota")
     .col.img
       img(v-if='imagen_' :src='baseUrl+"/images/"+imagen_')
   +nav
@@ -162,6 +171,12 @@ div.poema-main
     margin-bottom: 20px;
     line-height: 1.45;
   }
+  sup {
+    font-size: 14px;
+    padding: 2px;
+    position: relative;
+    top: -5px;
+  }
 }
 
 .nav {
@@ -180,6 +195,21 @@ div.poema-main
         color: $link-hover;
         text-decoration: underline;
       }
+    }
+  }
+}
+
+.notas-al-pie {
+  padding-top: 10px;
+  p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    sup {
+      font-size: 11px;
+      padding-right: 5px;
+      position: relative;
+      top: -4px;
+      font-weight: bold;
     }
   }
 }
