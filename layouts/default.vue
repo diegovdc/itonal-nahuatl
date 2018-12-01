@@ -11,7 +11,8 @@ export default {
   },
   mounted() {
     this.getPoemas()
-    let idioma = R.path(['$route', 'query', 'l'], this) || getOnLocal('idioma') || 'es'
+    let idioma =
+      R.path(['$route', 'query', 'l'], this) || getOnLocal('idioma') || 'es'
     this.$store.commit('cambiarIdioma', idioma)
   },
   methods: {
@@ -35,7 +36,11 @@ export default {
 </style>
 
 <style lang="scss">
+@import '../assets/mixins.scss';
 .main {
   padding-top: 60px;
+  @include under(480px) {
+    padding-top: 120px;
+  }
 }
 </style>

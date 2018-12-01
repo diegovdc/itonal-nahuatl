@@ -113,6 +113,7 @@ div.poema-main
   font-size: 30px;
   text-align: center;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .poema-main-container {
@@ -142,6 +143,8 @@ div.poema-main
 
 .audio {
   margin-bottom: 30px;
+  max-width: 350px;
+  width: 100%;
   display: block;
   // margin-left: auto;
   // margin-right: auto;
@@ -157,7 +160,7 @@ div.poema-main
   font-size: 18px;
   p {
     margin-bottom: 20px;
-    line-height: 1.3;
+    line-height: 1.45;
   }
 }
 
@@ -172,6 +175,7 @@ div.poema-main
   &__link {
     &-container {
       color: darken($link-hover, 15%);
+      text-align: center;
       &:hover {
         color: $link-hover;
         text-decoration: underline;

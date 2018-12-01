@@ -89,15 +89,19 @@ div#menu.menu
               v-for='(idioma, key) in idiomas'
               @click='seleccionarIdioma(key)'
               ) {{ idioma }}
-      p.link
+      p.link.link--main
         span(@click='goToPoemas') {{getTrans('Poemas', ['menu', 'poems'])}}
-      p.link
+      p.link.link--main
         nuxt-link(to='/acerca') {{getTrans('Acerca', ['menu', 'about'])}}
 
 </template>
 
 
 <style lang="scss" scoped>
+@import '../assets/mixins.scss';
+
+$main-link-width: 106px;
+
 .menu {
   position: fixed;
   top: 0;
@@ -113,6 +117,9 @@ div#menu.menu
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    @include under(menu-flex-wrapped) {
+      flex-wrap: wrap;
+    }
   }
 
   &__link--home {
@@ -122,7 +129,7 @@ div#menu.menu
 
 .submenu {
   position: relative;
-  width: 106px;
+  width: $main-link-width;
   text-align: center;
 
   //transitions
@@ -165,10 +172,20 @@ div#menu.menu
 
 .right-side {
   display: flex;
+  @include under(menu-flex-wrapped) {
+    padding-top: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }
 
 .link {
   padding: 0 7px;
   cursor: pointer;
+  &--main {
+    min-width: $main-link-width;
+    text-align: center;
+    margin-bottom: 7px;
+  }
 }
 </style>
