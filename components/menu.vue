@@ -23,14 +23,6 @@ export default {
     ...mapGetters(['shownPoemas'])
   },
 
-  watch: {
-    // shownPoemas() {
-    //   if (this.$route.fullPath === '/#poemas' && process.browser) {
-    //     this.goToPoemas()
-    //   }
-    // }
-  },
-
   created() {
     EventHub.$on('body-hover', () => {
       this.closeSubmenu()
