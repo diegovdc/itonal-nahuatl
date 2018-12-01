@@ -1,5 +1,5 @@
 ---
-titulo: Mohcuentia -tlapouil-
+titulo: Mohcuentia -Tlapouil-
 idioma: nah
 slug: mohcuentia-tlapouil
 orden: 7
