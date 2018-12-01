@@ -1,8 +1,8 @@
 <script>
 import EventHub from '~/EventHub'
-import { storeOnLocal } from '~/session-storage'
 import { mapState, mapGetters } from 'vuex'
 import { pathOr } from 'ramda'
+import log from 'tap-logger'
 
 export default {
   data() {
@@ -24,11 +24,11 @@ export default {
   },
 
   watch: {
-    shownPoemas() {
-      if (this.$route.fullPath === '/#poemas' && process.browser) {
-        this.goToPoemas()
-      }
-    }
+    // shownPoemas() {
+    //   if (this.$route.fullPath === '/#poemas' && process.browser) {
+    //     this.goToPoemas()
+    //   }
+    // }
   },
 
   created() {
@@ -49,16 +49,12 @@ export default {
 
     seleccionarIdioma(idioma_key) {
       this.$store.commit('cambiarIdioma', idioma_key)
-      storeOnLocal('idioma', idioma_key)
       this.$router.push({ query: { l: idioma_key } })
       this.closeSubmenu()
     },
 
     goToPoemas() {
-      console.log('this.$route.path goToPoemas', this.$route.path)
       if (this.$route.path !== '/') {
-        console.log('not home')
-
         const poemas = document.querySelector('#poemas')
         this.$router.push({ path: '/', hash: '#poemas' })
         return
@@ -66,7 +62,8 @@ export default {
       this.$nextTick(() => {
         const poemas = document.querySelector('#poemas')
         if (poemas) {
-          poemas.scrollIntoView()
+          console.warn('menu scroll')
+          window.scrollTo({ top: log(this.getCoords(poemas).top) - 150 })
         }
       })
     }

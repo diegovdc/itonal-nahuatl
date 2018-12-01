@@ -5,6 +5,9 @@ import log from 'tap-logger'
 import {
   baseUrl
 } from '~/base-url'
+import {
+  storeOnLocal
+} from '~/session-storage'
 import poemas from '../static/poemas.json'
 import trans from '../traducciones'
 
@@ -33,7 +36,9 @@ const createStore = () => {
         commit,
         state
       }, poemas) {
-        if(!R.isEmpty(state.poemas)) {return Promise.resolve(state.poemas)}
+        if (!R.isEmpty(state.poemas)) {
+          return Promise.resolve(state.poemas)
+        }
         return apiPoemas()
           .then(poemas =>
             commit('setPoemas', poemas)
@@ -57,6 +62,7 @@ const createStore = () => {
       },
 
       cambiarIdioma(state, idioma) {
+        storeOnLocal('idioma', idioma)
         state.lang = idioma
       }
     }

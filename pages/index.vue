@@ -8,31 +8,16 @@ export default {
   },
 
   mounted() {
-    function getCoords(elem) {
-      // crossbrowser version
-      var box = elem.getBoundingClientRect()
+    setTimeout(() => {
+      this.$nextTick(() => {
+        const poemas = document.querySelector('#poemas')
 
-      var body = document.body
-      var docEl = document.documentElement
-
-      var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop
-      var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft
-
-      var clientTop = docEl.clientTop || body.clientTop || 0
-      var clientLeft = docEl.clientLeft || body.clientLeft || 0
-
-      var top = box.top + scrollTop - clientTop
-      var left = box.left + scrollLeft - clientLeft
-
-      return { top: Math.round(top), left: Math.round(left) }
-    }
-    this.$nextTick(() => {
-      const poemas = document.querySelector('#poemas')
-      console.log('poemas ', getCoords(poemas))
-
-      if (this.$route.hash === '#poemas' && poemas) {
-        window.scrollTo({ top: log(getCoords(poemas).top - 58) })
-      }
+        if (this.$route.hash.indexOf('#poemas') > -1 && poemas) {
+          console.warn('home scroll')
+          window.scrollTo({ top: log(this.getCoords(poemas).top - 150) })
+        }
+      }),
+        600
     })
   }
 }
@@ -41,11 +26,11 @@ export default {
 <template lang='pug'>
 section.container
   div
-    h1.title {{getTrans('Itonal Nahuatl', ['siteTitle'])}}
+    h1.title {{getTrans('Nahuatl: Axhan, Cemanahuatl ihuan Cahuitl', ['siteTitle'])}}
     h3.subtitle por Don Maurilio Sánchez
     .main-img-container
       img.main-img(:src='baseUrl+"/images/home.jpg"')
-    h2.subtitle {{getTrans('', ['siteSubtitle'])}}
+    h2.subtitle {{getTrans('¡Nic nequi ni tlahtos, nic nequi tih nech caquis!', ['siteSubtitle'])}}
 
     div#poemas.poemas
       div(v-for='poema in shownPoemas')

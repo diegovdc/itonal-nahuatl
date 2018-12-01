@@ -4,6 +4,15 @@ import Menu from '~/components/menu.vue'
 import EventHub from '~/EventHub'
 import { getOnLocal } from '~/session-storage'
 import * as R from 'ramda'
+import log from 'tap-logger'
+
+const parseQs = R.pipe(
+  R.split('?'),
+  R.pathOr('', [1]),
+  R.split('='),
+  R.aperture(2),
+  R.fromPairs
+)
 
 export default {
   components: {
@@ -12,7 +21,10 @@ export default {
   mounted() {
     this.getPoemas()
     let idioma =
-      R.path(['$route', 'query', 'l'], this) || getOnLocal('idioma') || 'es'
+      R.path(['$route', 'query', 'l'], this) ||
+      R.path(['l'], parseQs(window.location.href)) || //por alguna razón no funciona window.location.search
+      getOnLocal('idioma') ||
+      'es'
     this.$store.commit('cambiarIdioma', idioma)
   },
   methods: {
