@@ -111,7 +111,6 @@ div.poema-main
 }
 .title {
   font-size: 30px;
-  font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
 }

@@ -50,7 +50,7 @@ export default {
     seleccionarIdioma(idioma_key) {
       this.$store.commit('cambiarIdioma', idioma_key)
       storeOnLocal('idioma', idioma_key)
-      this.$router.push({ query: {l: idioma_key} })
+      this.$router.push({ query: { l: idioma_key } })
       this.closeSubmenu()
     },
 
@@ -77,21 +77,22 @@ export default {
 
 <template lang="pug">
 div#menu.menu
-  p
-    nuxt-link(:to='"/?l="+lang' v-if='$route.name !== "index"') Itonal Nahuatl
-  div.right-side
-    div.submenu(@mouseover.stop='openSubmenu')
-      span {{getTrans('Idiomas', ['menu', 'languages'])}}
-      transition(name='submenu')
-        div.submenu-container(v-show="submenuIsOpen")
-          p.link(
-            v-for='(idioma, key) in idiomas'
-            @click='seleccionarIdioma(key)'
-            ) {{ idioma }}
-    p.link
-      span(@click='goToPoemas') {{getTrans('Poemas', ['menu', 'poems'])}}
-    p.link
-      nuxt-link(to='/acerca') {{getTrans('Acerca', ['menu', 'about'])}}
+  .menu__container
+    p.menu__link--home
+      nuxt-link(:to='"/?l="+lang' v-if='$route.name !== "index"') Itonal Nahuatl
+    div.right-side
+      div.submenu(@mouseover.stop='openSubmenu')
+        span {{getTrans('Idiomas', ['menu', 'languages'])}}
+        transition(name='submenu')
+          div.submenu-container(v-show="submenuIsOpen")
+            p.link(
+              v-for='(idioma, key) in idiomas'
+              @click='seleccionarIdioma(key)'
+              ) {{ idioma }}
+      p.link
+        span(@click='goToPoemas') {{getTrans('Poemas', ['menu', 'poems'])}}
+      p.link
+        nuxt-link(to='/acerca') {{getTrans('Acerca', ['menu', 'about'])}}
 
 </template>
 
@@ -102,14 +103,21 @@ div#menu.menu
   top: 0;
   left: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   padding: 20px 16px;
-  max-width: 1220px;
-  margin: 0 auto;
   z-index: 999;
   background-color: #fff;
   font-size: 18px;
+  &__container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link--home {
+    font-weight: bold;
+  }
 }
 
 .submenu {

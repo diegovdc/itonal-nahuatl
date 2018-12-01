@@ -1,5 +1,5 @@
 ---
-titulo: Tarrehe in miquiliztli
+titulo: Escucha la muerte
 idioma: es
 slug: tarrehe-in-miquiliztli
 orden: 10
