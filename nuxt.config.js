@@ -14,7 +14,7 @@ const poemasRoutes = () =>
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES' ? {
     router: {
-      base: '/itonal-nahuatl/'
+      base: ''
     }
   } : {}
 
