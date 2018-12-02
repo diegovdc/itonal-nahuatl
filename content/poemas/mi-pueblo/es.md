@@ -3,8 +3,8 @@ titulo: Mi Pueblo
 idioma: es
 slug: mi-pueblo
 orden: 2
-audio: agua-marina.mp3
-imagen: 1.jpg
+audio: mi-pueblo.mp3
+imagen: mi-pueblo.jpg
 notas_al_pie:
   1: 'Xoxhiboton: botón en flor. Pájaro endémico de la Malintzi de pecho anaranjado que cuando se posa en la punta de los encinos, asemejan flores en botón, de ahí su nombre <i>xochiboton</i>.'
 ---

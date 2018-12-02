@@ -3,8 +3,8 @@ titulo: 'Náhuatl: Yo’kapä ore'
 idioma: zoq
 slug: nahuatl-nanahuatzin-mo-caqui
 orden: 1
-audio: agua-marina.mp3
-imagen: 1.jpg
+audio: nahuatl-nanahuatzin-mo-caqui.mp3
+imagen: nahuatl-nanahuatzin-mo-caqui.jpg
 ---
 
 Náhuatl ore<br>

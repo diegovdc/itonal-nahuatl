@@ -3,8 +3,8 @@ titulo: My people
 idioma: en
 slug: mi-pueblo
 orden: 2
-audio: agua-marina.mp3
-imagen: 1.jpg
+audio: mi-pueblo.mp3
+imagen: mi-pueblo.jpg
 notas_al_pie:
   1: 'Xoxhiboton: button in bloom. Endemic bird of the orange-breasted Malintzi that when placed on the tip of the oaks, resemble flowers in button, hence its name <sup>xochiboton</sup>.'
 ---

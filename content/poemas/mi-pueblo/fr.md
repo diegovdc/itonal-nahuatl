@@ -3,8 +3,8 @@ titulo: Mon peuple
 idioma: fr
 slug: mi-pueblo
 orden: 2
-audio: agua-marina.mp3
-imagen: 1.jpg
+audio: mi-pueblo.mp3
+imagen: mi-pueblo.jpg
 notas_al_pie:
   1: 'Xochiboton: bourgeon en fleur. Oiseau au corps orangé typique du mont Malinche qui,lorsqu’il se pose sur les branches des chênes, ressemble à un bourgeon, d’où son nom <i>xochiboton</i>.'
 ---

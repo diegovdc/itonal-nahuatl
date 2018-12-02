@@ -3,8 +3,8 @@ titulo: Meu Povo
 idioma: pt
 slug: mi-pueblo
 orden: 2
-audio: agua-marina.mp3
-imagen: 1.jpg
+audio: mi-pueblo.mp3
+imagen: mi-pueblo.jpg
 notas_al_pie:
   1: 'Xoxhiboton: botão em flor. É um pássaro endêmico da zona conhecida como Malintzi, quase ao centro do país, de peito laranja quando se põe na ponta dos Carvalhos parece uma flor em botão, de ai o seu nome..'
   2: 'Tecido semelhante a um cachecol, só que de maior largura.'

@@ -3,8 +3,8 @@ titulo: Äj nhkupkuy
 idioma: zoq
 slug: mi-pueblo
 orden: 2
-audio: agua-marina.mp3
-imagen: 1.jpg
+audio: mi-pueblo.mp3
+imagen: mi-pueblo.jpg
 notas_al_pie:
   1: ' Xoxhiboton; jontzyire kyojampapä te’ malintzi’is pu’tzyäsepä’is kyujkpajk ijtpak te’ ku’yu kopajkomo, makapä po’e jäyäsenh ketpa, te’kamänhte nyäjmayajpa xochiboton o jäyäpä <i>botón</i>.'
 ---
