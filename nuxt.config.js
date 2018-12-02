@@ -34,7 +34,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: 'Itonal Nahuatl',
+    title: 'Nahuatl: Axhan, Cemanahuatl ihuan Cahuitl (Nahuatl: Hoy, Espacio y Tiempo)',
     meta: [{
         charset: 'utf-8'
       },
@@ -45,7 +45,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'poemas de Don Maurilio Sánchez'
+        content: 'Audio-libro del poemario de Don Maurilio Sánchez'
       }
     ],
     link: [{
