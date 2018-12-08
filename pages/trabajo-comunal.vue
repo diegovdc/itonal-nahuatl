@@ -94,9 +94,10 @@ div.trabajo-comuna
 
 <style lang="scss" scoped>
 @import '../assets/colors.scss';
+@import '../assets/mixins.scss';
+
 .title {
-  font-size: 30px;
-  text-align: center;
+  @include page-title;
 }
 
 .subtitle {

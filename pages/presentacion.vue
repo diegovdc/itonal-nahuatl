@@ -82,17 +82,13 @@ div.trabajo-comuna
 @include notas-al-pie;
 
 .title {
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 30px;
+  @include page-title;
 }
 
 .subtitle {
   font-size: 20px;
-  text-align: left;
-  margin-left: 0;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 
@@ -103,7 +99,7 @@ div.trabajo-comuna
 }
 
 .section {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   &__title {
     font-size: 18px;
     font-weight: bold;
@@ -119,7 +115,7 @@ div.trabajo-comuna
 
 p {
   font-size: 16px;
-  line-height: 1.3;
-  margin-bottom: 7px;
+  line-height: 1.5;
+  margin-bottom: 16px;
 }
 </style>

@@ -36,16 +36,16 @@ div.acerca
     p {{getTrans(defaultBio, ['bio'])}}
   .container
     .contacto
-      h3 Contacto
+      h3 Si desea adquirir el libro físico escribanos a:
       a(href="mailto:Maurilio-nahua@outlook.es") Maurilio-nahua@outlook.es
       a(href="mailto:aa360grados@gmail.com") aa360grados@gmail.com
 </template>
 
 <style lang="scss" scoped>
 @import '../assets/colors.scss';
+@import '../assets/mixins.scss';
 .title {
-  font-size: 30px;
-  text-align: center;
+  @include page-title;
 }
 
 .subtitle {
