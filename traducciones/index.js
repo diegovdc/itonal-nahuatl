@@ -12,19 +12,37 @@ export default {
     poems: {
       nah: 'Xhochitlahtol',
       es: 'Poemas',
-      zoq: 'Poemas',
+      zoq: '‘Yijtkuy',
       fr: 'Poèmes',
       pt: 'Poemas',
       en: 'Poems'
     },
 
     about: {
-      nah: 'Xhcualpachoh',
+      nah: 'Ihyeyecolis in',
       es: 'Acerca',
-      zoq: 'Acerca',
+      zoq: 'Te’e',
       fr: 'À propos ',
       pt: 'Sobre',
       en: 'About'
+    },
+
+    'trabajo-comunitario': {
+      nah: 'Tohcepantequitiliz',
+      es: 'Trabajo Comunitario',
+      zoq: 'Tumä yojsykuy',
+      fr: 'Travail communautaire',
+      pt: 'Trabalho comunitário',
+      en: 'Communal work'
+    },
+
+    presentacion: {
+      nah: 'Tetlaixhpanititiliz',
+      es: 'Presentación',
+      zoq: 'Tza’manhwajkuy',
+      fr: 'La présentation',
+      pt: 'Apresentação',
+      en: 'Presentation'
     }
   },
   siteTitle: {
