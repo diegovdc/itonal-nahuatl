@@ -3,8 +3,6 @@ titulo: 'Náhuatl: Yo’kapä ore'
 idioma: zoq
 slug: nahuatl-nanahuatzin-mo-caqui
 orden: 1
-musica: 
-  - nahuatl-nanahuatzin-mo-caqui-musica.mp3
 audio: nahuatl-nanahuatzin-mo-caqui.mp3
 imagen: nahuatl-nanahuatzin-mo-caqui.jpg
 ---

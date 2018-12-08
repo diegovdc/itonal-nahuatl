@@ -99,12 +99,13 @@ mixin nav
 div.poema-main
   h1.title {{ titulo(poema) }}
   +nav
-  .audio__container(v-if='musica_.length > 0')
-    p Poema ambientado
-    audio.audio(v-for='m in musica_' :src='baseUrl+"/audios/"+m' controls)
-  .audio__container(v-if='audio_' )
-    p Poema
-    audio.audio(:src='baseUrl+"/audios/"+audio_' controls)
+  .container.poema
+    .audio__container(v-if='audio_' )
+      p.audio__title Poema
+      audio.audio(:src='baseUrl+"/audios/"+audio_' controls)
+    .audio__container(v-if='musica_.length > 0')
+      p.audio__title Ambientación poética
+      audio.audio(v-for='m in musica_' :src='baseUrl+"/audios/"+m' controls)
   .poema-main-container
     .col.container.poema
       .body(v-html='poema.body')
@@ -169,6 +170,10 @@ div.poema-main
   // margin-left: auto;
   // margin-right: auto;
   @include under(poema) {
+  }
+  &__title {
+    font-weight: bold;
+    margin-bottom: 8px;
   }
 }
 

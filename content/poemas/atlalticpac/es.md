@@ -3,8 +3,6 @@ titulo: Atlalticpac (Agua Marina)
 idioma: es
 slug: atlalticpac
 orden: 5
-musica: 
-  - atlalticpac-musica.mp3
 audio: atlalticpac.mp3
 imagen: atlalticpac.jpg
 notas_al_pie:

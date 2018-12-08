@@ -3,8 +3,6 @@ titulo: Le sang d’Hidalgo
 idioma: fr
 slug: in-yeszo-in-hidalgo
 orden: 13
-musica: 
-  - in-yeszo-in-hidalgo-musica.mp3
 audio: in-yeszo-in-hidalgo.mp3
 imagen: in-yeszo-in-hidalgo.jpg
 ---
