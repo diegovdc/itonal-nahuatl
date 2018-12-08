@@ -55,6 +55,10 @@ export default {
       return this.imagen(this.poema)
     },
 
+    musica_() {
+      return this.musica(this.poema) || []
+    },
+
     notasAlPie() {
       return R.pathOr({}, ['attributes', 'notas_al_pie'], this.poema)
     },
@@ -95,7 +99,12 @@ mixin nav
 div.poema-main
   h1.title {{ titulo(poema) }}
   +nav
-  audio.audio(v-if='audio_' :src='baseUrl+"/audios/"+audio_' controls)
+  .audio__container(v-if='musica_.length > 0')
+    p Poema ambientado
+    audio.audio(v-for='m in musica_' :src='baseUrl+"/audios/"+m' controls)
+  .audio__container(v-if='audio_' )
+    p Poema
+    audio.audio(:src='baseUrl+"/audios/"+audio_' controls)
   .poema-main-container
     .col.container.poema
       .body(v-html='poema.body')
