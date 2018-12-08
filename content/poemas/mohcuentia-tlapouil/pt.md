@@ -3,6 +3,8 @@ titulo: Competição –conto nahuatl-
 idioma: pt
 slug: mohcuentia-tlapouil
 orden: 7
+musica: 
+  - mohcuentia-tlapouil-musica.mp3
 audio: mohcuentia-tlapouil.mp3
 imagen: mohcuentia-tlapouil.jpg
 ---

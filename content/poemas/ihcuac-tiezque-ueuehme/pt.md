@@ -3,6 +3,8 @@ titulo: Quando sejamos velhos
 idioma: pt
 slug: ihcuac-tiezque-ueuehme
 orden: 16
+musica: 
+  - ihcuac-tiezque-ueuehme-musica.mp3
 audio: ihcuac-tiezque-ueuehme.mp3
 imagen: ihcuac-tiezque-ueuehme.jpg
 ---

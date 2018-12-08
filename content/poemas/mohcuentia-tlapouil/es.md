@@ -3,6 +3,8 @@ titulo: Competencia -cuento nahuatl-
 idioma: es
 slug: mohcuentia-tlapouil
 orden: 7
+musica: 
+  - mohcuentia-tlapouil-musica.mp3
 audio: mohcuentia-tlapouil.mp3
 imagen: mohcuentia-tlapouil.jpg
 notas_al_pie:

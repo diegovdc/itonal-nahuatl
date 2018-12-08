@@ -3,6 +3,8 @@ titulo: Äj nä’pin
 idioma: zoq
 slug: in-no-yeszo
 orden: 11
+musica: 
+  - in-no-yeszo-musica.mp3
 audio: in-no-yeszo.mp3
 imagen: in-no-yeszo.jpg
 ---

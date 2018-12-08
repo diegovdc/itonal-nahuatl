@@ -3,6 +3,8 @@ titulo: Tumä’ajkuy
 idioma: zoq
 slug: se-manih
 orden: 17
+musica: 
+  - se-manih-musica.mp3
 audio: se-manih.mp3
 imagen: se-manih.jpg
 ---

@@ -3,6 +3,8 @@ titulo: Äj nhkupkuy
 idioma: zoq
 slug: mi-pueblo
 orden: 2
+musica: 
+  - mi-pueblo-musica.mp3
 audio: mi-pueblo.mp3
 imagen: mi-pueblo.jpg
 notas_al_pie:

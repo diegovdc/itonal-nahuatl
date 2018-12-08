@@ -3,6 +3,8 @@ titulo: Riddle?
 idioma: en
 slug: zazanil
 orden: 6
+musica: 
+  - zazanil-musica.mp3
 audio: zazanil.mp3
 imagen: zazanil.jpg
 ---

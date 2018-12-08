@@ -3,6 +3,8 @@ titulo: Tä atzypä’ajta’ukam
 idioma: zoq
 slug: ihcuac-tiezque-ueuehme
 orden: 16
+musica: 
+  - ihcuac-tiezque-ueuehme-musica.mp3
 audio: ihcuac-tiezque-ueuehme.mp3
 imagen: ihcuac-tiezque-ueuehme.jpg
 ---

@@ -3,6 +3,8 @@ titulo: Cuando seamos viejos
 idioma: es
 slug: ihcuac-tiezque-ueuehme
 orden: 16
+musica: 
+  - ihcuac-tiezque-ueuehme-musica.mp3
 audio: ihcuac-tiezque-ueuehme.mp3
 imagen: ihcuac-tiezque-ueuehme.jpg
 ---
