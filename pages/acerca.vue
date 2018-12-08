@@ -1,5 +1,19 @@
 <script>
 export default {
+  head() {
+    return {
+      title: 'Acerca',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Maurilio Sánchez: Campesino, músico y poeta, una persona consiente de los cambios que ha venido trayendo la “modernidad” en la comunidad nahua de San Isidro Buen Suceso. Datos de contacto.'
+        }
+      ]
+    }
+  },
+
   data() {
     return {
       defaultBio:

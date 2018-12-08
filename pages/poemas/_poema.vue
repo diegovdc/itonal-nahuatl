@@ -113,6 +113,8 @@ div.poema-main
 @import '../../assets/mixins.scss';
 @import '../../assets/colors.scss';
 
+@include notas-al-pie;
+
 .poema-main {
   max-width: 900px;
   width: 100%;
@@ -171,12 +173,7 @@ div.poema-main
     margin-bottom: 20px;
     line-height: 1.45;
   }
-  sup {
-    font-size: 14px;
-    padding: 2px;
-    position: relative;
-    top: -5px;
-  }
+  @include body-sup;
 }
 
 .nav {
@@ -199,18 +196,4 @@ div.poema-main
   }
 }
 
-.notas-al-pie {
-  padding-top: 10px;
-  p {
-    margin-bottom: 15px;
-    font-size: 14px;
-    sup {
-      font-size: 11px;
-      padding-right: 5px;
-      position: relative;
-      top: -4px;
-      font-weight: bold;
-    }
-  }
-}
 </style>
