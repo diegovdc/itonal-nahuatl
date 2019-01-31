@@ -15,7 +15,7 @@ Escúchame, ¿si te acuerdas<br>
 qué nos decían?<br>
 ¿A dónde irás cuando te mueras?<br>
 
-¿Haber si te acuerdas?<br>
+¿A ver si te acuerdas?<br>
 ¡Si te mataban!<br>
 En Tonatiuh hueical,li llegabas.<br>
 
