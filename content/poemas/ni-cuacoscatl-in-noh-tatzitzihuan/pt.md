@@ -3,6 +3,8 @@ titulo: A coroa dos meus pais
 idioma: pt
 slug: ni-cuacoscatl-in-noh-tatzitzihuan
 orden: 18
+musica: 
+  - ni-cuacoscatl-in-noh-tatzitzihuan-musica.mp3
 audio: ni-cuacoscatl-in-noh-tatzitzihuan.mp3
 imagen: ni-cuacoscatl-in-noh-tatzitzihuan.jpg
 ---

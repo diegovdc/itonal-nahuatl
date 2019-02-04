@@ -9,7 +9,10 @@
 ///@type {map}
 
 $breaks: (xs: 480px,
-menu-flex-wrapped: 410px,
+menu-changes-size-1: 715px, // Itonal Nahuatl ocupa 2 lineas
+menu-changes-size-2: 620px, // Menu derecho se va para abajo (tiene dos niveles)
+menu-changes-size-3: 360px, // Menu derecho tiene 3 niveles
+menu-flex-wrapped: 620px,
 poema: 768px,
 md: 1024px,
 lg: $container-max-width,

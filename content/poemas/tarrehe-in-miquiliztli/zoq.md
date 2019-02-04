@@ -3,6 +3,8 @@ titulo: Käma’nä te’ ka’kuy
 idioma: zoq
 slug: tarrehe-in-miquiliztli
 orden: 10
+musica: 
+  - tarrehe-in-miquiliztli-musica.mp3
 audio: tarrehe-in-miquiliztli.mp3
 imagen: tarrehe-in-miquiliztli.jpg
 ---

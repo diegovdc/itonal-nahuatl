@@ -1,5 +1,19 @@
 <script>
 export default {
+  head() {
+    return {
+      title: 'Acerca',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Maurilio Sánchez: Campesino, músico y poeta, una persona consiente de los cambios que ha venido trayendo la “modernidad” en la comunidad nahua de San Isidro Buen Suceso. Datos de contacto.'
+        }
+      ]
+    }
+  },
+
   data() {
     return {
       defaultBio:
@@ -22,16 +36,16 @@ div.acerca
     p {{getTrans(defaultBio, ['bio'])}}
   .container
     .contacto
-      h3 Contacto
+      h3 Si desea adquirir el libro físico escribanos a:
       a(href="mailto:Maurilio-nahua@outlook.es") Maurilio-nahua@outlook.es
       a(href="mailto:aa360grados@gmail.com") aa360grados@gmail.com
 </template>
 
 <style lang="scss" scoped>
 @import '../assets/colors.scss';
+@import '../assets/mixins.scss';
 .title {
-  font-size: 30px;
-  text-align: center;
+  @include page-title;
 }
 
 .subtitle {

@@ -51,8 +51,14 @@ export default {
 @import '../assets/mixins.scss';
 .main {
   padding-top: 60px;
-  @include under(480px) {
+  @include under(menu-changes-size-1) {
+    padding-top: 80px;
+  }
+  @include under(menu-changes-size-2) {
     padding-top: 120px;
+  }
+  @include under(menu-changes-size-3) {
+    padding-top: 140px;
   }
 }
 </style>

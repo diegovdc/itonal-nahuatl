@@ -157,3 +157,37 @@
     }
   }
 }
+
+@mixin body-sup {
+  sup {
+    font-size: 14px;
+    padding: 2px;
+    position: relative;
+    top: -5px;
+  }
+}
+
+@mixin notas-al-pie {
+  .notas-al-pie {
+    padding-top: 10px;
+
+    p {
+      margin-bottom: 15px;
+      font-size: 14px;
+
+      sup {
+        font-size: 11px;
+        padding-right: 5px;
+        position: relative;
+        top: -4px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@mixin page-title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}

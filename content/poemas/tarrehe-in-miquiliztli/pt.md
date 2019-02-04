@@ -3,6 +3,8 @@ titulo: Escuta à morte
 idioma: pt
 slug: tarrehe-in-miquiliztli
 orden: 10
+musica: 
+  - tarrehe-in-miquiliztli-musica.mp3
 audio: tarrehe-in-miquiliztli.mp3
 imagen: tarrehe-in-miquiliztli.jpg
 ---

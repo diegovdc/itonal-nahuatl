@@ -3,6 +3,8 @@ titulo: Él
 idioma: es
 slug: yeh
 orden: 19
+musica: 
+  - yeh-musica.mp3
 audio: yeh.mp3
 imagen: yeh.jpg
 ---

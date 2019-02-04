@@ -27,7 +27,6 @@ export default {
 section.container
   div
     h1.title {{getTrans('Nahuatl: Axhan, Cemanahuatl ihuan Cahuitl', ['siteTitle'])}}
-    h3.subtitle por Don Maurilio Sánchez
     .main-img-container
       img.main-img(:src='baseUrl+"/images/home.jpg"')
     h2.subtitle {{getTrans('¡Nic nequi ni tlahtos, nic nequi tih nech caquis!', ['siteSubtitle'])}}

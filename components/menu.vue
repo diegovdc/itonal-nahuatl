@@ -70,6 +70,8 @@ div#menu.menu
     p.menu__link--home
       nuxt-link(:to='"/?l="+lang' v-if='$route.name !== "index"') Itonal Nahuatl
     div.right-side
+      p.link.link--main
+        nuxt-link(to='/presentacion') {{getTrans('Presentación', ['menu', 'presentacion'])}}
       div.submenu(@mouseover.stop='openSubmenu')
         span {{getTrans('Idiomas', ['menu', 'languages'])}}
         transition(name='submenu')
@@ -82,6 +84,8 @@ div#menu.menu
         span(@click='goToPoemas') {{getTrans('Poemas', ['menu', 'poems'])}}
       p.link.link--main
         nuxt-link(to='/acerca') {{getTrans('Acerca', ['menu', 'about'])}}
+      p.link.link--main
+        nuxt-link(to='/trabajo-comunal') {{getTrans('Trabajo Comunal', ['menu', 'trabajo-comunal'])}}
 
 </template>
 

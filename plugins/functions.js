@@ -40,6 +40,7 @@ Vue.mixin({
     titulo: R.path(['attributes', 'titulo']),
     slug: R.path(['attributes', 'slug']),
     audio: R.path(['attributes', 'audio']),
+    musica: R.path(['attributes', 'musica']),
     imagen: R.path(['attributes', 'imagen']),
     getTrans(or, path) {
       return R.pathOr(or, path.concat(this.lang), this.trans)

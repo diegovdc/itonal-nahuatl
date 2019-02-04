@@ -55,6 +55,10 @@ export default {
       return this.imagen(this.poema)
     },
 
+    musica_() {
+      return this.musica(this.poema) || []
+    },
+
     notasAlPie() {
       return R.pathOr({}, ['attributes', 'notas_al_pie'], this.poema)
     },
@@ -95,7 +99,13 @@ mixin nav
 div.poema-main
   h1.title {{ titulo(poema) }}
   +nav
-  audio.audio(v-if='audio_' :src='baseUrl+"/audios/"+audio_' controls)
+  .container.poema
+    .audio__container(v-if='audio_' )
+      p.audio__title Poema
+      audio.audio(:src='baseUrl+"/audios/"+audio_' controls)
+    .audio__container(v-if='musica_.length > 0')
+      p.audio__title Ambientación poética
+      audio.audio(v-for='m in musica_' :src='baseUrl+"/audios/"+m' controls)
   .poema-main-container
     .col.container.poema
       .body(v-html='poema.body')
@@ -112,6 +122,8 @@ div.poema-main
 <style lang='scss' scoped>
 @import '../../assets/mixins.scss';
 @import '../../assets/colors.scss';
+
+@include notas-al-pie;
 
 .poema-main {
   max-width: 900px;
@@ -159,6 +171,10 @@ div.poema-main
   // margin-right: auto;
   @include under(poema) {
   }
+  &__title {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
 }
 
 .body /deep/ {
@@ -171,12 +187,7 @@ div.poema-main
     margin-bottom: 20px;
     line-height: 1.45;
   }
-  sup {
-    font-size: 14px;
-    padding: 2px;
-    position: relative;
-    top: -5px;
-  }
+  @include body-sup;
 }
 
 .nav {
@@ -199,18 +210,4 @@ div.poema-main
   }
 }
 
-.notas-al-pie {
-  padding-top: 10px;
-  p {
-    margin-bottom: 15px;
-    font-size: 14px;
-    sup {
-      font-size: 11px;
-      padding-right: 5px;
-      position: relative;
-      top: -4px;
-      font-weight: bold;
-    }
-  }
-}
 </style>

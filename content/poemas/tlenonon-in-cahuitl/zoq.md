@@ -3,6 +3,8 @@ titulo: ¿Tire te’ jama?
 idioma: zoq
 slug: tlenonon-in-cahuitl
 orden: 9
+musica: 
+  - tlenonon-in-cahuitl-musica.mp3
 audio: tlenonon-in-cahuitl.mp3
 imagen: tlenonon-in-cahuitl.jpg
 ---
