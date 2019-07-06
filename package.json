@@ -20,7 +20,7 @@
     "@nuxtjs/axios": "^5.0.0",
     "cross-env": "^5.2.0",
     "mazorca-core": "1.6.2",
-    "nuxt": "^2.0.0",
+    "nuxt": "2.8.1",
     "ramda": "0.25.0",
     "tap-logger": "1.2.0"
   },
@@ -33,7 +33,7 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-vue": "^4.0.0",
-    "frontmatter-markdown-to-json": "0.0.8",
+    "frontmatter-markdown-to-json": "0.0.10",
     "node-sass": "4.10.0",
     "nodemon": "1.18.6",
     "prettier": "1.14.3",
